@@ -45,17 +45,17 @@ def valid_date(d):
 parser = argparse.ArgumentParser(description='Script for downloading CAMS Global data set')
 parser.add_argument('-s_date', '--start_date', metavar='YYYY-MM-DD HH:MM:SS', type=valid_datetime, required=True)
 parser.add_argument('-e_date', '--end_date', metavar='YYYY-MM-DD HH:MM:SS', type=valid_datetime, required=True)
-parser.add_argument('-model_order', '--model_order', type=int, required=True)
+parser.add_argument('-model_level', '--model_level', type=int, required=True)
 args = vars(parser.parse_args())
 
 # Temporal interval to consider
 start_datetime_complete = args["start_date"]
 end_datetime_complete = args["end_date"]
 
-model_order = int(args["model_order"])
+model_level = int(args["model_level"])
 
 # Main directory of CAMS Global where will be saved the NetCDF files 
-DATADIR = joinpath(path_main_dir_CAMS_Global_data, "datasets_model_level_" + str(model_order))
+DATADIR = joinpath(path_main_dir_CAMS_Global_data, "datasets_model_level_" + str(model_level))
 
 if not os.path.exists(DATADIR):
   os.mkdir(DATADIR)
@@ -113,7 +113,7 @@ while esito == False:
                     'carbon_monoxide', 'nitrogen_dioxide',
                     'ozone', 'sulphur_dioxide', 'temperature',
                 ],
-                'model_level': str(model_order),
+                'model_level': str(model_level),
                 'time': [
                     '00:00', '03:00', '06:00',
                     '09:00', '12:00', '15:00',
