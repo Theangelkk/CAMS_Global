@@ -48,7 +48,7 @@ if path_main_dir_CAMS_Global_data == "":
     print("Error: set the environmental variables of CAMS_Global")
     exit(-1)
 
-DATADIR = joinpath(path_main_dir_CAMS_Global_data, "datasets_model_level_" + str(model_order))
+DATADIR = joinpath(path_main_dir_CAMS_Global_data, "datasets_model_level_" + str(args["model_order"]))
 
 DATADIR_AIR_POLL_ORG = joinpath(DATADIR, "EAC4_ORG")
 DATADIR_RELATIVE_HUMIDITY= joinpath(DATADIR, "relative_humidity")

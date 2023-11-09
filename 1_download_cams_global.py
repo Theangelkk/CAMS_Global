@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore")
 def joinpath(rootdir, targetdir):
     return os.path.join(os.sep, rootdir + os.sep, targetdir)
 
-# Path of CAMS_Gloabl
+# Path of CAMS_Global
 path_main_dir_CAMS_Global_data = os.environ['CAMS_Global']
 
 if path_main_dir_CAMS_Global_data == "":
